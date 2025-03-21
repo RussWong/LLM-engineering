@@ -47,7 +47,6 @@ if __name__ == "__main__":
     print(hf_config)
     print("\n===============================================")
     # 根据config来写入config.ini
-    import pdb;pdb.set_trace()
     config = configparser.ConfigParser()
     config["llama"] = {}
     config["llama"]["model_name"] = "llama-2-7b-chat" if hf_config["_name_or_path"] == '' else hf_config["_name_or_path"]
