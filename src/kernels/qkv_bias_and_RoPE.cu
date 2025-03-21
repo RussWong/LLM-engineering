@@ -433,6 +433,7 @@ void launchRoPE(TensorWrapper<T>* qkv_buf,
                                                     rotary_embedding_dim,
                                                     rotary_embedding_base);
 #ifdef PRINT_DATA
+    printf("qkv bias and rope self kernel top2 result:\n");
     print_data<<<1, 1>>>(q);
 #else
 #endif
