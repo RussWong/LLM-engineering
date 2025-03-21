@@ -11,5 +11,5 @@
 
   3./path/to/LLM-engineering/llama2-7b-tokenizer.bin替换到user_entry.cpp#L6的路径
 
-  4. mkdir build && cd build && cmake .. && make -j8
+  4. mkdir build && cd build && cmake .. && make -j8 && ./bin/main
 ```
