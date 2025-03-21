@@ -136,6 +136,7 @@ void launchRMSNorm( TensorWrapper<T>* decoder_out, // [num tokens, hidden_units]
                             num_tokens,
                             hidden_units);
 #ifdef PRINT_DATA
+    printf("rmsnorm kernel top2 result:\n");
     print_data<<<1, 1>>>(decoder_out->data);
 #else
 #endif
