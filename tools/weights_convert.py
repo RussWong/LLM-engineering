@@ -95,7 +95,7 @@ if __name__ == "__main__":
                 k = param.detach().cpu().float().numpy()
             elif name.find('self_attn.v_proj.weight') != -1:
                 v = param.detach().cpu().float().numpy()
-                qkv = np.hstack((q, k, v))
+                qkv = np.vstack((q, k, v))
                 qkv.astype(np_weight_data_type).tofile(f"model.layers.{layer}.self_attn.qkv.weight.bin")
                 print("qkv shape: ", qkv.shape)
             # if cur_layer == layer:
@@ -113,7 +113,7 @@ if __name__ == "__main__":
                 gate = param.detach().cpu().float().numpy()
             elif name.find('mlp.up_proj.weight') != -1:
                 up = param.detach().cpu().float().numpy()
-                gate_up = np.hstack((gate, up))
+                gate_up = np.vstack((gate, up))
                 gate_up.astype(np_weight_data_type).tofile(f"model.layers.{layer}.mlp.gate_up_proj.weight.bin")
                 print("fused gate_up shape: ", gate_up.shape)
         # elif name.find('mlp.up_proj.weight') != -1:
