@@ -324,6 +324,7 @@ void launchAddFusedQKVBiasTransposeAndRoPE(TensorWrapper<T> *q_buf,
                                                            params.max_position_embeddings,
                                                            params.use_dynamic_ntk);
 #ifdef PRINT_DATA
+    printf("qkv bias and rope ctx kernel top2 result:\n");
     print_data<<<1, 1>>>(q_buf->data);
 #else
 #endif
