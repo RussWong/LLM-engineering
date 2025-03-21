@@ -507,6 +507,7 @@ void launchDecoderMaskedMHA(TensorWrapper<T>* qkv_buf,
                                                             rotary_embedding_dim,
                                                             rotary_embedding_base);
 #ifdef PRINT_DATA
+    printf("fused decoder self attn kernel top2 result:\n");
     print_data<<<1, 1>>>(mha_output->data, true);
 #else
 #endif
