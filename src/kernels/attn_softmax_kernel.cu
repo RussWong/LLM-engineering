@@ -291,6 +291,7 @@ void launchScaleMaskAndSoftmax(TensorWrapper<T> *qk,
         LAUNCH_SOFTMAX(float, 1);
     }
 #ifdef PRINT_DATA
+    printf("attn softmax kernel top2 result:\n");
     print_data<<<1, 1>>>(attn_score->data);
 #else
 #endif
