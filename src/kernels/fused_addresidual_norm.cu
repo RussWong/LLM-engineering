@@ -167,6 +167,7 @@ void launchFusedAddBiasResidualRMSNorm( // residual.shape = [num tokens, hidden_
                                                 batch_size,
                                                 hidden_units);
 #ifdef PRINT_DATA
+    printf("fused addres norm kernel top2 result:\n");
     print_data<<<1, 1>>>(decoder_out->data);
 #else
 #endif
