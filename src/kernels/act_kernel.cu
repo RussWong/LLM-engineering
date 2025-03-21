@@ -52,6 +52,7 @@ void launchAct(TensorWrapper<T>* input, TensorWrapper<T>* out) {
     dim3 block(256);
     silu_and_mul_kernel<T><<<grid, block>>>(out->data, input->data, intermedia_size);
 #ifdef PRINT_DATA
+    printf("act kernel top2 result:\n");
     print_data<<<1, 1>>>(out->data);
 #else
 #endif
