@@ -88,6 +88,7 @@ void launchRepeatKVCache(TensorWrapper<T> *k_cache_src, //{num_layers, batch_siz
                                            max_k_len,
                                            max_seq_len);
 #ifdef PRINT_DATA
+    printf("repeat kv kernel top2 result:\n");
     print_data<<<1, 1>>>(k_cache_dst->data);
 #else
 #endif
